@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: senpaihelppbot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /ping
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
